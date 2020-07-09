@@ -7,7 +7,7 @@ if month in list31:
     print("31")
 elif month in list30:
     print("30")
-elif month == 2 and year % 4 == 0:
+elif month == 2 and year % 4 == 0 and year % 100 != 0:
     print('29')
 else:
     print('28')
