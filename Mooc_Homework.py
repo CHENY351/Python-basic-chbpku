@@ -112,3 +112,14 @@ for i in alist:
     list.append(i)
 print(sorted(list))
 
+
+# ch5-8。打印一定范围内的素数
+n = int(input())
+list = []
+for i in range(2, n):
+    for j in range(2, i):
+        if i % j == 0:
+            break
+    else:
+        list.append(i)
+print(list)
