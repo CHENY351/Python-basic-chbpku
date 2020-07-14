@@ -175,3 +175,15 @@ def lcm(num1, num2):
 print(lcm(6, 7))
 
 
+
+# ch6-4.factorial
+def fact(num):
+    n = 1
+    for i in range(1, num+1):
+        n = n * i
+    return n
+        
+print(fact(5))
+
+
+
