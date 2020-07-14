@@ -123,3 +123,13 @@ for i in range(2, n):
     else:
         list.append(i)
 print(list)
+
+
+#Ch5-9.猴子吃桃问题
+n = int(input())
+x = 1
+i = 1
+while i < n:
+    x = 2*(x+1)
+    i += 1
+print(x)
