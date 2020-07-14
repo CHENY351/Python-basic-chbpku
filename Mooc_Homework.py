@@ -133,3 +133,23 @@ while i < n:
     x = 2*(x+1)
     i += 1
 print(x)
+
+
+# ch6-1.斐波那契数列第n项
+# solution 1
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+    
+print(fib(3))
+
+# solution 2
+def fib(n):
+    a, b = 1, 1
+    for i in range(n - 1):
+        a, b = b, a + b
+    return a
+
+print(fib(5))
