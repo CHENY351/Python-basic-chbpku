@@ -153,3 +153,25 @@ def fib(n):
     return a
 
 print(fib(5))
+
+
+# ch6-2.highest common factor
+def hcf(num1, num2):
+    a = min(num1, num2)
+    for i in range(a, 0, -1):
+        if num1 % i ==0 and num2 % i ==0:
+            return i
+        
+print(hcf(6, 15))
+
+
+# ch6-3.least common multiple
+def lcm(num1, num2):
+    a = max(num1, num2)
+    for i in range(a, num1*num2+1):
+        if i % num1 == 0 and i % num2 == 0:
+            return i
+        
+print(lcm(6, 7))
+
+
