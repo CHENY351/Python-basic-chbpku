@@ -187,3 +187,36 @@ print(fact(5))
 
 
 
+# ch6-5.BubbleSort
+# def bubbleSort(alist):
+#     l = len(alist)
+#     for i in range(l-1):
+#         for j in range(l-i-1):
+#             if alist[j] > alist[j+1]:
+#                 alist[j], alist[j+1] = alist[j+1], alist[j]
+#                 print(alist)
+#     return alist
+def bubbleSort(alist):
+    for i in range(1, len(alist)):
+        for j in range(0, len(alist)-i):
+            if alist[j] > alist[j+1]:
+                alist[j], alist[j + 1] = alist[j + 1], alist[j]
+                print(alist)
+    return alist
+
+alist=list(map(int,input().split()))
+print(bubbleSort(alist))
+
+
+
+# ch6-6.列表元素筛选
+def foo(alist):
+    newlist = []
+    for i in range(1, len(alist), 2):
+        newlist.append(alist[i])
+    return newlist
+
+alist=list(map(int,input().split()))
+print(foo(alist))
+
+
