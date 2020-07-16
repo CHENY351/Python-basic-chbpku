@@ -220,3 +220,10 @@ alist=list(map(int,input().split()))
 print(foo(alist))
 
 
+
+# ch7-1.一年中的第几天
+from datetime import datetime
+d = input()
+d2 = datetime.strptime(d, '%Y/%m/%d')
+d1 = datetime.strptime(d[:4] + '/1/1', '%Y/%m/%d')
+print((d2-d1).days +1)
