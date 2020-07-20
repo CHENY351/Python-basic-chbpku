@@ -252,6 +252,6 @@ l = list(range(0,n))
 result = []
 for i in range(n):
     for j in range(m-1):
-        l.append(l.pop(0))
-    result.append(l.pop(0))
+        l.append(l.pop(0))#报数：从第一个报完，放到最尾；再下一个，再放到最尾
+    result.append(l.pop(0))#需要揪出来的那个，从原列表删除，取出来
 print(result)
