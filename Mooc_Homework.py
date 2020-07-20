@@ -227,3 +227,19 @@ d = input()
 d2 = datetime.strptime(d, '%Y/%m/%d')
 d1 = datetime.strptime(d[:4] + '/1/1', '%Y/%m/%d')
 print((d2-d1).days +1)
+
+# ch7-2.公式求值
+from math import sin, pi, e, sqrt, log
+x = int(input())
+y = sin(15 * pi / 180) + (e ** x -5 * x) / sqrt(x ** 2 + 1) -log(3 * x, e)
+print(round(y, 10))
+
+
+# ch7-3.特殊数
+from math import sqrt
+n = 1
+while True:
+    if (n + 150) == int(sqrt(n + 150)) ** 2 and (n + 150 + 136) == int(sqrt(n + 150 + 136)) ** 2:
+        break
+    n += 1
+print(n)
