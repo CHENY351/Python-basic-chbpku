@@ -243,3 +243,15 @@ while True:
         break
     n += 1
 print(n)
+
+
+# ch7-5.约瑟夫环报数问题
+n = int(input())
+m = int(input())
+l = list(range(0,n))
+result = []
+for i in range(n):
+    for j in range(m-1):
+        l.append(l.pop(0))
+    result.append(l.pop(0))
+print(result)
