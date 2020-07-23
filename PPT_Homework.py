@@ -59,6 +59,19 @@ class People:
         
     def __lt__(self, other):
         return self.city < other.city
+    
+    
+class Teacher(People):
+    def __init__(self, name, city, school):
+        self.name = name
+        self.city = city
+        self.school = school
+        
+    def moveto(self, newschool):
+        self.school = newschool
+        
+    def __lt__(self, other):
+        return self.school < other.school
         
         
 # 类的调用
