@@ -42,3 +42,24 @@ a = ''
 for key in slist:
     a = a + str(dict[key])
 print(a)
+
+
+# 类的练习
+class People:
+    def __init__(self, name, city):
+        self.name = name
+        self.city = city
+        
+    def __str__(self):
+        s = '{} comes from {}'.format(self.name, self.city)
+        return s
+    
+    def moveto(self, newcity):
+        self.city = newcity
+        
+        
+# 类的调用
+a = People('ying','China')
+print(a)
+a.moveto('Canada')
+print(a)
