@@ -57,9 +57,14 @@ class People:
     def moveto(self, newcity):
         self.city = newcity
         
+    def __lt__(self, other):
+        return self.city < other.city
+        
         
 # 类的调用
 a = People('ying','China')
+b = People('meng','dongbei')
 print(a)
+print(a < b)
 a.moveto('Canada')
 print(a)
