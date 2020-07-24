@@ -282,3 +282,51 @@ for i in range(len(names)):
     s.append(Student(names[i], mscores[i], cscores[i], escores[i]))
 s.sort()
 print(s[0])
+
+
+# ch8-2.两数求和问题
+list = list(map(int, input().split()))
+n = int(input())
+
+def sum_target(list, n):
+    for i in list:
+        for j in list:
+            if i != j and i + j == n:
+                return sorted([list.index(i), list.index(j)])
+            
+print(sum_target(list, n))
+
+
+# ch8-3.精致数
+x = int(input())
+y = int(input())
+n = int(input())
+
+def delicate_num(x, y, n):
+    a = set()
+    for num in range(n+1):
+        for i in range(n):
+            for j in range(n):
+                if x**i+y**j == num:
+                    a.add(num)
+    return sorted(a)
+            
+print(delicate_num(x, y, n))
+
+
+
+
+# ch8-4.三角形最大周长
+list = list(map(int, input().split()))
+
+def max_perimeter(list):
+    list.sort()
+    while len(list)>=3:
+        a = list.pop() #取出最后一位最大值
+        if list[-1] + list[-2] > a:
+            return a+list[-1]+list[-2]
+            break
+    else:
+        return 0
+
+print(max_perimeter(list))
