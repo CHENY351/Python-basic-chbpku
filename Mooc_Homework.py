@@ -255,3 +255,30 @@ for i in range(n):
         l.append(l.pop(0))#报数：从第一个报完，放到最尾；再下一个，再放到最尾
     result.append(l.pop(0))#需要揪出来的那个，从原列表删除，取出来
 print(result)
+
+
+# ch8-1.学生成绩排序
+names = input().split()
+mscores = list(map(int, input().split()))
+cscores = list(map(int, input().split()))
+escores = list(map(int, input().split()))
+
+class Student:
+    def __init__(self, name, mscore, cscore, escore):
+        self.name = name
+        self.mscore = mscore
+        self.cscore = cscore
+        self.escore = escore
+        self.total = mscore + cscore + escore
+        
+    def __lt__(self, other):
+        return self.total > other.total
+    
+    def __str__(self):
+        return '{} {} {} {}'.format(self.name, self.mscore, self.cscore, self.escore)
+    
+s = []
+for i in range(len(names)):
+    s.append(Student(names[i], mscores[i], cscores[i], escores[i]))
+s.sort()
+print(s[0])
