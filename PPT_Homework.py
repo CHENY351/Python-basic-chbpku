@@ -93,3 +93,42 @@ class mylist(list):
 # 调用    
 a = mylist([1,2,3])
 a.product()
+
+
+
+# 生成器 例外处理
+while True:    
+    a = input()
+    b = input()
+    try:
+        print(int(a)/int(b))
+    except (ValueError, TypeError):
+        print('not int')
+    except ZeroDivisionError:
+        print('divisor cannot be 0')
+        
+        
+# 生成器
+[i*2 for i in range(10)]
+[i for i in range(100) if not ((i%7==0) or ('7' in str(i)))]
+
+
+# 生成器 100以内勾股数
+a = [(i, j, k) for i in range (1, 100) for j in range(1, 100) for k in range(1, 100) if i**2 + j**2 == k**2]
+print(a)
+    
+a = {tuple(sorted([i, j, k])) for i in range (1, 100) for j in range(1, 100) for k in range(1, 100) if i**2 + j**2 == k**2}
+print(a)
+
+
+# 生成器 fibonacci数列
+def fib():
+    a, b = 1, 1
+    while True:
+        yield a
+        a, b = b, a+b
+        
+for fn in fib():
+    print(fn)
+    if fn > 1000:
+        break
