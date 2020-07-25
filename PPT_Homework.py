@@ -132,3 +132,39 @@ for fn in fib():
     print(fn)
     if fn > 1000:
         break
+
+        
+# 乌龟作图 求圆周率        
+import turtle
+import random
+
+t = turtle.Turtle()
+turtle.tracer(0)
+turtle.setworldcoordinates(0, 0, 1, 1)
+
+t.penup()
+t.goto(0,0)
+t.pendown()
+t.goto(0,1)
+t.goto(1,1)
+t.goto(1,0)
+t.goto(0,0)
+t.penup()
+t.goto(0,1)
+t.pendown()
+t.circle(-1,90,100)
+i = 0
+for n in range(1,10001):
+    x = random.uniform(0,1)
+    y = random.uniform(0,1)
+    t.penup()
+    t.goto(x, y)
+    if (x*x+y*y)**0.5 <= 1:
+        t.dot(5,'pink')
+        i = i+1
+    else:
+        t.dot(5,'blue')
+print('pi',i/10000*4)
+    
+turtle.update()
+turtle.done()
