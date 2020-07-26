@@ -168,3 +168,18 @@ print('pi',i/10000*4)
     
 turtle.update()
 turtle.done()
+
+
+# 输入整数n，打印n行等腰空心三角形
+n = int(input())
+for i in range(1, n+1):
+    if i == 1:
+        print((n-i) * ' ' + '+')
+    elif i == n:
+        print((n-i) * ' ' + (2*i-1) * '+')
+    else:
+        print((n-i) * ' ' + '+' + (2*i-3) * ' ' + '+')
+        
+# 输入奇数n，打印底边为n的等腰空心三角形
+
+        
