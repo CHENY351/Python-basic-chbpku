@@ -181,5 +181,13 @@ for i in range(1, n+1):
         print((n-i) * ' ' + '+' + (2*i-3) * ' ' + '+')
         
 # 输入奇数n，打印底边为n的等腰空心三角形
-
+n = int(input()) 
+m = (n+1)//2 # 以n个+为底，共(n+1)/2行
+for i in range(1, m + 1):
+    if i == 1:
+        print((m-i) * ' ' + '+')
+    elif i == m:
+        print((m-i) * ' ' + n * '+')
+    else:
+        print((m-i) * ' ' + '+' + (2*(i-1) -1) * ' ' + '+')
         
