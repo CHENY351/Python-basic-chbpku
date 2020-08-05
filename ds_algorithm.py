@@ -1,4 +1,5 @@
 # 用栈判断括号是否合理
+# solution1:(chb)
 from pythonds.basic.stack import Stack
 
 def parChecker(string):
@@ -29,6 +30,36 @@ def match(open, close):
     return opens.index(open) == closes.index(close)
     
 print(parChecker('{[(])]()((()))}'))
+
+# solution2:(own)
+from pythonds.basic.stack import Stack
+
+def parChecker(string):
+    s = Stack()
+    
+    for i in string:
+        if i in '([{':
+            s.push(i)
+        else:
+            if s.isEmpty():
+                return False
+            else:
+                top = s.pop()
+                if not match(top, i):
+                    return False
+                    break
+                
+    if s.isEmpty():
+        return True
+    else:
+        return False
+
+def match(open, close):
+    opens = '([{'
+    closes = ')]}'
+    return opens.index(open) == closes.index(close)
+
+print(parChecker('{[()]()((()))}'))
 
 # 用栈将十进制转化为二进制
 from pythonds.basic.stack import Stack
