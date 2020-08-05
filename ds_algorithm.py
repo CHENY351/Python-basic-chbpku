@@ -35,6 +35,8 @@ print(parChecker('{[(])]()((()))}'))
 from pythonds.basic.stack import Stack
 
 def parChecker(string):
+    if string == '': # 防止空串
+        return False
     s = Stack()
     
     for i in string:
