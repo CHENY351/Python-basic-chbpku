@@ -69,3 +69,33 @@ def decToHex(dec):
     return binary
 
 print(decToHex(233))
+
+
+# 后缀表达式求值
+from pythonds.basic.stack import Stack
+
+def postfixValue(postfixExpr):
+    operandStack = Stack()
+    #tokenList = postfixExpr.split()
+    
+    for token in postfixExpr:
+        if token in '0123456789':
+            operandStack.push(int(token))
+        else:
+            operand1 = operandStack.pop()
+            operand2 = operandStack.pop()
+            result = domath(token, operand2, operand1)
+            operandStack.push(result)
+    return operandStack.pop()
+
+def domath(operator, operand2, operand1):
+    if operator == '+':
+        return operand2 + operand1
+    elif operator == '-':
+        return operand2 - operand1
+    elif operator == '*':
+        return operand2 * operand1
+    else:
+        return operand2 / operand1
+    
+print(postfixValue('45*62*+'))
